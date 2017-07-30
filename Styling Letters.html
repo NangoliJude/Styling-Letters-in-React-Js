@@ -1,0 +1,48 @@
+<!Doctype html>
+<html lang="en-us">
+<head>
+<meta charset="UTF-8"/>
+<title>Styling Letters</title>
+<script src="build/react.js"></script>
+<script src="build/react-dom.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/babel-core/5.8.34/browser.min.js"></script>
+</head>
+<body>
+     <div id="App"> </div>
+     
+<script type="text/babel">
+
+class Letter extends React.Component{
+	render(){
+		var letterStyle = {
+			padding: "10px",
+			margin: "10px",
+			backgroundColor: this.props.Tcolor,
+			color: "#339",
+			hieght: "500px",
+			display: "inline-block",
+			fontSize: "27px",
+			textAlign: "center",
+			fontStyle: this.props.fontMe
+			}
+		return(
+		<div style={letterStyle}>
+		   {this.props.children}
+		</div>
+		 );
+		}
+	}
+	ReactDOM.render(
+	<div>
+	    <Letter Tcolor= "#63ebf2" fontMe = "italic" >N</Letter>
+		<Letter Tcolor= "#b6f162" fontMe = "italic">A</Letter>
+	    <Letter Tcolor= "#f06161" fontMe = "italic">N</Letter>
+		<Letter Tcolor= "#60dcef" fontMe = "oblique">G</Letter>
+		<Letter Tcolor= "#ef60d4" fontMe = "bold"   >O</Letter>
+		<Letter Tcolor= "#2b0724" fontMe = "italic">L</Letter>
+		<Letter Tcolor= "#f40202" fontMe = "oblique">I</Letter>
+	</div>, document.getElementById("App"));
+</script>
+
+</body>
+</html>
